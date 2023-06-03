@@ -1,0 +1,37 @@
+@font-face {
+	font-family: 'Radikal';
+	font-weight: 400;
+	src: url('../fonts/Radikal Regular/radikal-regular.eot');
+	/* IE9*/
+	src: url('../fonts/Radikal Regular/radikal-regular.eot?#iefix')
+			format('embedded-opentype'),
+		/* IE6-IE8 */ url('../fonts/Radikal Regular/radikal-regular.woff2')
+			format('woff2'),
+		/* chrome、firefox */ url('../fonts/Radikal Regular/radikal-regular.woff')
+			format('woff'),
+		/* chrome、firefox */ url('../fonts/Radikal Regular/radikal-regular.ttf')
+			format('truetype'),
+		/* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+			url('../fonts/Radikal Regular/radikal-regular.svg#Radikal W03 Regular')
+			format('svg');
+	/* iOS 4.1- */
+}
+
+@font-face {
+	font-family: 'Radikal';
+	font-weight: 700;
+	src: url('../fonts/Radikal Black/radikal-black.eot');
+	/* IE9*/
+	src: url('../fonts/Radikal Black/radikal-black.eot?#iefix')
+			format('embedded-opentype'),
+		/* IE6-IE8 */ url('../fonts/Radikal Black/radikal-black.woff2')
+			format('woff2'),
+		/* chrome、firefox */ url('../fonts/Radikal Black/radikal-black.woff')
+			format('woff'),
+		/* chrome、firefox */ url('../fonts/Radikal Black/radikal-black.ttf')
+			format('truetype'),
+		/* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+			url('../fonts/Radikal Black/radikal-black.svg#Radikal W03 Black')
+			format('svg');
+	/* iOS 4.1- */
+}

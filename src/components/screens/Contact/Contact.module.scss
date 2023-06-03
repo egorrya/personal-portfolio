@@ -1,0 +1,32 @@
+@import '../../../assets/styles/variables.scss';
+@import '../../../assets/styles/mixins';
+
+.contact {
+	max-width: 100%;
+	margin: 20vh auto;
+
+	font-size: 4vw;
+
+	@include respond(phone) {
+		font-size: 6.5vw;
+	}
+
+	&__line {
+		display: flex;
+		justify-content: space-between;
+		gap: 5rem;
+		margin-bottom: 2rem;
+
+		@include respond(phone) {
+			gap: 4vw;
+		}
+	}
+
+	a,
+	p {
+		color: $color-white-dark;
+		margin: 0rem;
+		text-transform: uppercase;
+		transition: opacity 250ms ease;
+	}
+}

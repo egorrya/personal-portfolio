@@ -1,0 +1,16 @@
+@import '../../../assets/styles/mixins';
+
+.about {
+	padding: 15vh 20vw 20vh;
+
+	font-size: 2vw;
+
+	width: 100%;
+
+	user-select: none;
+
+	@include respond(phone) {
+		padding: 4vh 0;
+		font-size: 4.4vw;
+	}
+}
