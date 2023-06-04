@@ -1,4 +1,4 @@
-import { FC, useState } from 'react';
+import { FC, useEffect, useState } from 'react';
 
 import { motion, useAnimate } from 'framer-motion';
 
@@ -7,6 +7,11 @@ import styles from './Header.module.scss';
 import { linksData } from '../../../data';
 import { useActiveSectionStore } from '../../../store/useActiveSectionStore';
 
+function handleWindowResize() {
+	let vh = window.innerHeight * 0.01;
+	document.documentElement.style.setProperty('--vh', `${vh}px`);
+}
+
 const Header: FC = () => {
 	const name = 'Egor Riabysh';
 
@@ -14,6 +19,15 @@ const Header: FC = () => {
 	const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
 	const { activeSection } = useActiveSectionStore((state) => state);
+
+	useEffect(() => {
+		handleWindowResize();
+		window.addEventListener('resize', handleWindowResize);
+
+		return () => {
+			window.removeEventListener('resize', handleWindowResize);
+		};
+	}, []);
 
 	const [logoSignScope, animateLogoSign] = useAnimate();
 
@@ -86,6 +100,7 @@ const Header: FC = () => {
 				className={`${styles.header__mobileMenu} 
 						${isMobileMenuOpen ? styles.open : ''}`}
 			>
+				<div className={styles.overlay}></div>
 				<motion.div
 					initial={{ opacity: 0 }}
 					animate={{

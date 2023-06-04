@@ -60,6 +60,7 @@ export const portfolioData: IPortfolioData[] = [
 			'SCSS',
 			'CSS Modules',
 		],
+		imageSrc: 'lap.jpg',
 		githubLinks: [
 			{
 				link: 'https://github.com/egorrya/personal-portfolio/',

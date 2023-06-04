@@ -5,18 +5,20 @@
 
 	&__cards {
 		max-width: 100%;
-		display: grid;
-		grid-auto-columns: 1fr;
-		grid-column-gap: 8vw;
-		grid-row-gap: 12vh;
-		grid-template-columns: 1fr 1fr;
-		grid-template-rows: auto auto;
+		display: flex;
+		justify-content: space-around;
+		flex-wrap: wrap;
 
-		@include respond(phone) {
-			grid-template-columns: 1fr;
-			grid-template-rows: auto auto auto;
+		& > div {
+			flex-basis: 45%;
+			padding-bottom: 45%;
 
-			grid-row-gap: 3vh;
+			margin-bottom: 5%;
+
+			@include respond(phone) {
+				flex-basis: 100%;
+				padding-bottom: 100%;
+			}
 		}
 	}
 }

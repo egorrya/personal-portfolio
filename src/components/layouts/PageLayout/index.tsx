@@ -12,7 +12,7 @@ interface PageLayoutProps {
 const PageLayout: FC<PageLayoutProps> = ({ children }) => {
 	return (
 		<>
-			<BackgroundCursorBall />
+			{window.innerWidth > 1024 && <BackgroundCursorBall />}
 			<Header />
 			<main className={styles.wrapper}>{children}</main>
 			<BackToTop />

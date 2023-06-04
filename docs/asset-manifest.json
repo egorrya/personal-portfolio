@@ -1,16 +1,15 @@
 {
   "files": {
-    "main.css": "./static/css/main.1094c54e.css",
-    "main.js": "./static/js/main.bef5a32d.js",
+    "main.css": "./static/css/main.b79f07bf.css",
+    "main.js": "./static/js/main.19080a6d.js",
     "static/js/610.2795d5fc.chunk.js": "./static/js/610.2795d5fc.chunk.js",
     "static/js/654.fb0f758d.chunk.js": "./static/js/654.fb0f758d.chunk.js",
+    "static/js/781.4c8cac14.chunk.js": "./static/js/781.4c8cac14.chunk.js",
     "static/js/326.9e6a2f10.chunk.js": "./static/js/326.9e6a2f10.chunk.js",
     "static/js/680.25beed52.chunk.js": "./static/js/680.25beed52.chunk.js",
     "static/js/492.856d8481.chunk.js": "./static/js/492.856d8481.chunk.js",
-    "static/js/212.1cca3bb6.chunk.js": "./static/js/212.1cca3bb6.chunk.js",
-    "static/js/739.57f588a9.chunk.js": "./static/js/739.57f588a9.chunk.js",
-    "static/media/6.mp4": "./static/media/6.26acbce470d5ce28d1db.mp4",
-    "static/media/0.mp4": "./static/media/0.ea3375c0c91e33c45d41.mp4",
+    "static/js/739.7e6533e6.chunk.js": "./static/js/739.7e6533e6.chunk.js",
+    "static/media/6.mp4": "./static/media/6.dbbaddc6419ffc201493.mp4",
     "static/media/radikal-regular.svg": "./static/media/radikal-regular.9658334aae53c03956bc.svg",
     "static/media/radikal-black.svg": "./static/media/radikal-black.fd615097aeadb74fbbef.svg",
     "static/media/scroll.jpg": "./static/media/scroll.05909905c81bb4db6779.jpg",
@@ -21,6 +20,7 @@
     "static/media/radikal-black.eot": "./static/media/radikal-black.50149b2ba080bdf231cd.eot",
     "static/media/radikal-black.ttf": "./static/media/radikal-black.fd85f21507efb15cb76d.ttf",
     "static/media/pride.jpg": "./static/media/pride.380fd696e394fa847806.jpg",
+    "static/media/lap.jpg": "./static/media/lap.6a62a0d2cae3d84e4f41.jpg",
     "static/media/nottwi.jpg": "./static/media/nottwi.92e20a907b6d0e104450.jpg",
     "static/media/radikal-regular.woff": "./static/media/radikal-regular.224dadf5ecd47c037e81.woff",
     "static/media/radikal-black.woff": "./static/media/radikal-black.46cd32607edf84be170a.woff",
@@ -28,11 +28,11 @@
     "static/media/radikal-black.woff2": "./static/media/radikal-black.ef858967ade809684d07.woff2",
     "static/media/better.jpg": "./static/media/better.6b4c30e0269d98bfbefd.jpg",
     "index.html": "./index.html",
-    "main.1094c54e.css.map": "./static/css/main.1094c54e.css.map",
-    "main.bef5a32d.js.map": "./static/js/main.bef5a32d.js.map"
+    "main.b79f07bf.css.map": "./static/css/main.b79f07bf.css.map",
+    "main.19080a6d.js.map": "./static/js/main.19080a6d.js.map"
   },
   "entrypoints": [
-    "static/css/main.1094c54e.css",
-    "static/js/main.bef5a32d.js"
+    "static/css/main.b79f07bf.css",
+    "static/js/main.19080a6d.js"
   ]
 }

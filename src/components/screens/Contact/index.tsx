@@ -22,7 +22,7 @@ const Contact: FC = () => {
 									opacity: 1,
 									transition: {
 										duration: 0.5,
-										delay: lineIndex * 1.5 + wordIndex * 0.3 + 1,
+										delay: lineIndex * 1 + wordIndex * 0.3 + 1,
 									},
 								}}
 								className={styles.contact__word}
@@ -43,7 +43,7 @@ const Contact: FC = () => {
 										opacity: 1,
 										transition: {
 											duration: 0.5,
-											delay: (lineIndex + 1) * 1.5 + linkIndex * 0.3 + 1,
+											delay: (lineIndex + 1) * 1 + linkIndex * 0.3 + 1,
 										},
 									}}
 								>

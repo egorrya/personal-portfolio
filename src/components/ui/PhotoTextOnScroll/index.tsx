@@ -1,10 +1,25 @@
-import { FC, useEffect, useRef, useState } from 'react';
-
 import { motion, useScroll } from 'framer-motion';
+import { throttle } from 'lodash'; // lodash is used for the throttle function
+import { FC, useCallback, useEffect, useRef, useState } from 'react';
 import { skillsData } from '../../../data';
+import myImage from './../../../assets/images/me.jpg';
 import styles from './PhotoTextOnScroll.module.scss';
 
-import myImage from './../../../assets/images/me.jpg';
+const opacityFormula = (
+	scrollProgress: number,
+	whenItShouldWork: number = 0
+): number => {
+	const distanceFromThreshold = Math.abs(
+		scrollProgress - (1 - whenItShouldWork)
+	);
+	const fadeDistance = 0.15;
+	const opacity = Math.min(
+		1,
+		Math.max(0, (fadeDistance - distanceFromThreshold) / fadeDistance),
+		2 - Math.abs(2 * (scrollProgress - (1 - whenItShouldWork)))
+	);
+	return opacity;
+};
 
 const PhotoTextOnScroll: FC = () => {
 	const ref = useRef<HTMLDivElement>(null);
@@ -25,88 +40,64 @@ const PhotoTextOnScroll: FC = () => {
 		return unsubscribe;
 	}, [scrollYProgress]);
 
+	const getScrollDistance = useCallback(() => {
+		if (window.innerWidth < 440) return 2170;
+		if (window.innerWidth < 768) return 1930;
+		if (window.innerWidth < 1024) return 1270;
+		return 2350;
+	}, []);
+
 	useEffect(() => {
-		const scrollDistance = () => {
-			if (window.innerWidth < 768) return 1930;
+		setScrollDistance(getScrollDistance());
 
-			if (window.innerWidth < 1024) return 1270;
-
-			return 2350;
-		};
-
-		setScrollDistance(scrollDistance());
-
-		const handleResize = () => setScrollDistance(scrollDistance());
+		const handleResize = throttle(() => {
+			setScrollDistance(getScrollDistance());
+		}, 200);
 
 		window.addEventListener('resize', handleResize);
 
 		return () => {
 			window.removeEventListener('resize', handleResize);
 		};
-	}, []);
+	}, [getScrollDistance]);
 
-	console.log(Math.abs(0.5 - scrollProgress) * 2);
-	const opacityFormula = (
-		scrollProgress: number,
-		whenItShouldWork: number = 0
-	): number => {
-		const distanceFromThreshold = Math.abs(
-			scrollProgress - (1 - whenItShouldWork)
-		);
-		const fadeDistance = 0.15; // Adjust this value to control the fade distance
-		const opacity = Math.min(
-			1,
-			Math.max(0, (fadeDistance - distanceFromThreshold) / fadeDistance),
-			2 - Math.abs(2 * (scrollProgress - (1 - whenItShouldWork)))
-		);
-		return opacity;
-	};
+	const xHeading = scrollDistance * scrollProgress - scrollDistance;
 
 	return (
-		<motion.div
-			ref={ref}
-			className={styles.root}
-			initial={{ opacity: 0 }}
-			viewport={{ once: true }}
-			whileInView={{
-				opacity: 1,
-				transition: {
-					duration: 1,
-					delay: 2,
-				},
-			}}
-		>
+		<div ref={ref} className={styles.root}>
 			<div className={styles.root__container}>
-				<motion.div
-					style={{
-						transform: `rotate(${scrollProgress * 360}deg)`,
-					}}
-					className={styles.backgroundCircle}
-				>
-					<div className={styles.backgroundCircle__circle}>
-						<motion.p
-							style={{
-								opacity: opacityFormula(scrollProgress, 0),
-							}}
-						>
-							Salute!
-						</motion.p>
-						{skillsData.directions.map((direction, index) => (
+				{window.innerWidth > 1024 && (
+					<motion.div
+						style={{
+							transform: `rotate(${scrollProgress * 360}deg)`,
+						}}
+						className={styles.backgroundCircle}
+					>
+						<div className={styles.backgroundCircle__circle}>
 							<motion.p
-								key={index}
 								style={{
-									opacity: opacityFormula(
-										scrollProgress + 1 / skillsData.directions.length,
-										index / skillsData.directions.length
-									),
+									opacity: opacityFormula(scrollProgress, 0),
 								}}
 							>
-								{direction}
+								Scroll Down
 							</motion.p>
-						))}
-					</div>
-					<div className={styles.backgroundCircle__overlay}></div>
-				</motion.div>
+							{skillsData.directions.map((direction, index) => (
+								<motion.p
+									key={index}
+									style={{
+										opacity: opacityFormula(
+											scrollProgress + 1 / skillsData.directions.length,
+											index / skillsData.directions.length
+										),
+									}}
+								>
+									{direction}
+								</motion.p>
+							))}
+						</div>
+						<div className={styles.backgroundCircle__overlay}></div>
+					</motion.div>
+				)}
 				<div className={styles.imageContainer}>
 					<motion.img
 						style={{
@@ -117,8 +108,8 @@ const PhotoTextOnScroll: FC = () => {
 						whileInView={{
 							opacity: 1,
 							transition: {
-								duration: 1,
-								delay: 3,
+								duration: 1.5,
+								delay: 1,
 							},
 						}}
 						viewport={{ once: true }}
@@ -127,7 +118,7 @@ const PhotoTextOnScroll: FC = () => {
 					/>
 					<motion.h2
 						style={{
-							x: scrollDistance * scrollProgress - scrollDistance,
+							x: xHeading,
 							opacity: scrollProgress === 0 || scrollProgress === 1 ? 0 : 1,
 						}}
 						className={`${styles.heading} ${styles.heading__black}`}
@@ -137,7 +128,7 @@ const PhotoTextOnScroll: FC = () => {
 				</div>
 				<motion.h2
 					style={{
-						x: scrollDistance * scrollProgress - scrollDistance,
+						x: xHeading,
 						opacity: scrollProgress === 0 || scrollProgress === 1 ? 0 : 1,
 					}}
 					className={`${styles.heading} ${styles.heading__white}`}
@@ -145,7 +136,7 @@ const PhotoTextOnScroll: FC = () => {
 					{skillsData.skills.join(' / ')}
 				</motion.h2>
 			</div>
-		</motion.div>
+		</div>
 	);
 };
 

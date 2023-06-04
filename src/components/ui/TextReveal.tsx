@@ -1,13 +1,11 @@
-import { FC, memo, useEffect, useRef, useState } from 'react';
-
 import { motion, useScroll } from 'framer-motion';
+import { FC, useEffect, useRef, useState } from 'react';
 
 interface TextRevealProps {
 	children: string;
 }
 
 const TextReveal: FC<TextRevealProps> = ({ children }) => {
-	const text = children;
 	const words = children.split(' ');
 	const ref = useRef<HTMLDivElement>(null);
 
@@ -19,47 +17,30 @@ const TextReveal: FC<TextRevealProps> = ({ children }) => {
 	const [scrollProgress, setScrollProgress] = useState(0);
 
 	useEffect(() => {
-		const unsubscribe = scrollYProgress.on('change', (latest) => {
-			return setScrollProgress(latest);
+		const unsubscribe = scrollYProgress.onChange((latest) => {
+			setScrollProgress(latest);
 		});
 
-		return unsubscribe;
+		return () => unsubscribe();
 	}, [scrollYProgress]);
+
+	const wordOpacityThresholds = words.map((_, index) => index / words.length);
 
 	return (
 		<div ref={ref}>
-			{words.map((word, index) => {
-				const threshold = 1.5;
-
-				const calculateOpacity = () => {
-					const newOpacity =
-						scrollProgress * threshold * text.split(' ').length - index;
-					return Math.min(Math.max(newOpacity, 0.1), 1);
-				};
-
-				const opacity = calculateOpacity();
-
-				return <Word key={index} word={word} opacity={opacity} />;
-			})}
+			{words.map((word, index) => (
+				<motion.div
+					style={{ marginRight: '1rem', display: 'inline-block' }}
+					animate={{
+						opacity: scrollProgress > wordOpacityThresholds[index] ? 1 : 0.15,
+					}}
+					key={index}
+				>
+					{word}
+				</motion.div>
+			))}
 		</div>
 	);
 };
-
-interface WordProps {
-	word: string;
-	opacity: number;
-}
-
-const Word: FC<WordProps> = memo(({ word, opacity }) => {
-	return (
-		<motion.div
-			style={{ marginRight: '1rem', display: 'inline-block' }}
-			animate={{ opacity }}
-			// transition={{ duration: 0.05 }}
-		>
-			{word}
-		</motion.div>
-	);
-});
 
 export default TextReveal;
