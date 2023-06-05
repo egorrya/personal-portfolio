@@ -1,8 +1,7 @@
 import { motion, useAnimation } from 'framer-motion';
 import { FC, memo, useCallback, useState } from 'react';
 import { portfolioData } from '../../../data';
-import useImage from '../../../hooks/useImage';
-import useVideo from '../../../hooks/useVideo';
+import useFile from '../../../hooks/useFile';
 import styles from './PortfolioCard.module.scss';
 
 interface PortfolioCardProps {
@@ -13,8 +12,8 @@ const PortfolioCard: FC<PortfolioCardProps> = ({ id }) => {
 	const { title, description, tech, liveLink, githubLinks, imageSrc } =
 		portfolioData[id];
 
-	const { video } = useVideo(`${id}.mp4`);
-	const { image } = useImage(`${imageSrc}`);
+	const { file: video } = useFile(`assets/videos/${id}.mp4`);
+	const { file: image } = useFile(`assets/images/${imageSrc}`);
 
 	const [isHovered, setIsHovered] = useState(false);
 	const controls = useAnimation();
@@ -51,7 +50,7 @@ const PortfolioCard: FC<PortfolioCardProps> = ({ id }) => {
 				opacity: 1,
 				transition: {
 					duration: 1.5,
-					delay: (id % 2) + 0.5,
+					delay: window.innerWidth <= 768 ? 0.7 : (id % 2) + 0.5,
 				},
 			}}
 		>

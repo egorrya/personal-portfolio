@@ -97,7 +97,19 @@
 			}
 
 			&:nth-child(12) {
-				transform: translate(80%, -30%) rotate(-14deg);
+				transform: translate(40%, -30%) rotate(-14deg);
+			}
+
+			&:nth-child(13) {
+				transform: translate(20%, 20%) rotate(-6deg);
+			}
+
+			&:nth-child(14) {
+				transform: translate(20%, 40%) rotate(7deg);
+			}
+
+			&:nth-child(15) {
+				transform: translate(-30%, -20%) rotate(9deg);
 			}
 		}
 	}

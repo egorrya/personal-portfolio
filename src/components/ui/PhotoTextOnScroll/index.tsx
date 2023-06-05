@@ -2,7 +2,7 @@ import { motion, useScroll } from 'framer-motion';
 import { throttle } from 'lodash'; // lodash is used for the throttle function
 import { FC, useCallback, useEffect, useRef, useState } from 'react';
 import { skillsData } from '../../../data';
-import myImage from './../../../assets/images/me.jpg';
+import myImage from './../../../assets/images/me.webp';
 import styles from './PhotoTextOnScroll.module.scss';
 
 const opacityFormula = (
@@ -41,7 +41,7 @@ const PhotoTextOnScroll: FC = () => {
 	}, [scrollYProgress]);
 
 	const getScrollDistance = useCallback(() => {
-		if (window.innerWidth < 440) return 2170;
+		if (window.innerWidth < 440) return 2070;
 		if (window.innerWidth < 768) return 1930;
 		if (window.innerWidth < 1024) return 1270;
 		return 2350;

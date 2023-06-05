@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpersonal_portfolio=self.webpackChunkpersonal_portfolio||[]).push([[154],{6154:function(e,o,p){e.exports=p.p+"static/media/nottwi.e3f96d3eafa13c918338.webp"}}]);

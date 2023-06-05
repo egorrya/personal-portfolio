@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpersonal_portfolio=self.webpackChunkpersonal_portfolio||[]).push([[650],{6650:function(e,o,a){e.exports=a.p+"static/media/radikal-regular.224dadf5ecd47c037e81.woff"}}]);

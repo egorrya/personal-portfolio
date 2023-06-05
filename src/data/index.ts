@@ -51,7 +51,7 @@ export const portfolioData: IPortfolioData[] = [
 	{
 		id: 0,
 		title: 'This Portfolio Website',
-		description: `Chrome extension that replaces the default scrollbar with a visually appealing and user-friendly alternative for Linux and Windows users, with over 9,000 installs.`,
+		description: `You can see the code and how it's done.`,
 		tech: [
 			'React',
 			'TypeScript',
@@ -60,11 +60,11 @@ export const portfolioData: IPortfolioData[] = [
 			'SCSS',
 			'CSS Modules',
 		],
-		imageSrc: 'lap.jpg',
+		imageSrc: 'lap.webp',
 		githubLinks: [
 			{
 				link: 'https://github.com/egorrya/personal-portfolio/',
-				title: `Look how it's done`,
+				title: `Visit Github`,
 			},
 		],
 	},
@@ -72,7 +72,7 @@ export const portfolioData: IPortfolioData[] = [
 		id: 1,
 		title: 'Nottwitter',
 		description: `Replica of Twitter with core functionalities, with ReactJS, TypeScript and Redux on the front-end, and with Node.js, Express.js, MongoDB on the back-end.`,
-		imageSrc: 'nottwi.jpg',
+		imageSrc: 'nottwi.webp',
 		tech: [
 			'TypeScript',
 			'React',
@@ -101,7 +101,7 @@ export const portfolioData: IPortfolioData[] = [
 		id: 2,
 		title: 'Pride',
 		description: ` This website is dedicated to celebrating the pride month, promoting inclusivity and diversity, and advocating for equal rights.`,
-		imageSrc: 'pride.jpg',
+		imageSrc: 'pride.webp',
 		tech: ['React', 'Framer Motion', 'SCSS', 'CSS Modules'],
 		githubLinks: [
 			{ link: 'https://github.com/egorrya/pride-main', title: 'Github' },
@@ -116,7 +116,7 @@ export const portfolioData: IPortfolioData[] = [
 		title: 'BetterStartPage',
 		description: `Chrome extension that elegantly displays bookmarks on the start page, enhancing user experience made with vanilla JavaScript and SCSS.
 		`,
-		imageSrc: 'better.jpg',
+		imageSrc: 'better.webp',
 		tech: ['Vanilla JavaScript', 'SCSS'],
 		githubLinks: [
 			{ link: 'https://github.com/egorrya/BetterStartPage/', title: 'Github' },
@@ -131,7 +131,7 @@ export const portfolioData: IPortfolioData[] = [
 		id: 4,
 		title: 'AES Encryption',
 		description: `A small utility for encrypting and decrypting messages using the AES encryption algorithm.`,
-		imageSrc: 'aes.jpg',
+		imageSrc: 'aes.webp',
 		tech: ['Vanilla JavaScript'],
 		liveLink: {
 			link: 'https://egorrya.github.io/aes-encryption/',
@@ -143,7 +143,7 @@ export const portfolioData: IPortfolioData[] = [
 		id: 5,
 		title: 'Blending Scrollbar',
 		description: `Chrome extension that replaces the default scrollbar with a visually appealing and user-friendly alternative for Linux and Windows users, with over 9,000 installs.`,
-		imageSrc: 'scroll.jpg',
+		imageSrc: 'scroll.webp',
 		tech: ['Vanilla JavaScript', 'SCSS'],
 		liveLink: {
 			link: 'https://chrome.google.com/webstore/detail/blending-scrollbar/ajjnokaolfbjimgelmdmdlijoclmjnag',
@@ -170,11 +170,13 @@ export const contactData = {
 			text: 'LinkedIn',
 		},
 		{
-			href: 'https://docs.google.com/document/d/1Zf7g5GM2f3a6ZiY9_dFE-M5oWYoOsMQP16P-B3aAvUA/edit?usp=sharing',
+			href: 'CV Egor Riabysh.pdf',
 			target: '_blank',
 			text: 'Open CV',
 		},
 	],
+
+	email: 'egorriabysh@gmail.com',
 };
 
 export const skillsData = {

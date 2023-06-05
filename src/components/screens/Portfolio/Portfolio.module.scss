@@ -4,7 +4,8 @@
 	margin-top: 10vh;
 
 	&__cards {
-		max-width: 100%;
+		width: 105%;
+		margin-left: -2.5%;
 		display: flex;
 		justify-content: space-around;
 		flex-wrap: wrap;
