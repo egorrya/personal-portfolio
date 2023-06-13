@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkpersonal_portfolio=self.webpackChunkpersonal_portfolio||[]).push([[929],{9929:function(o,a,p){o.exports=p.p+"static/media/CV Egor Riabysh.f0aa35d1f0b0c3c976a8.pdf"}}]);

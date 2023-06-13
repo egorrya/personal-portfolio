@@ -1,7 +1,7 @@
 @import '../../../assets/styles/mixins';
 
 .about {
-	padding: 15vh 20vw 20vh;
+	padding: 20vh 20vw 20vh;
 
 	font-size: 2vw;
 
@@ -10,7 +10,7 @@
 	user-select: none;
 
 	@include respond(phone) {
-		padding: 4vh 0;
+		padding: 13vh 0 4vh;
 		font-size: 4.4vw;
 	}
 }

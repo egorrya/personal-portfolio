@@ -79,7 +79,7 @@ const Contact: FC = () => {
 											transition: {
 												duration: 0.5,
 												delay:
-													(lineIndex + 2) * 1 +
+													(lineIndex + 1) * 1 +
 													contactData.links.length * 0.3 +
 													1,
 											},

@@ -101,8 +101,7 @@ const PhotoTextOnScroll: FC = () => {
 				<div className={styles.imageContainer}>
 					<motion.img
 						style={{
-							scale: 1 + (1 - scrollProgress) * 0.15,
-							y: scrollProgress,
+							scale: 1 + (1 - scrollProgress) * 0.22,
 						}}
 						initial={{ opacity: 0 }}
 						whileInView={{

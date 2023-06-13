@@ -1,7 +1,11 @@
 @import '../../../assets/styles/mixins';
 
 .portfolio {
-	margin-top: 10vh;
+	padding-top: 15vh;
+
+	@include respond(phone) {
+		padding-top: 13vh;
+	}
 
 	&__cards {
 		width: 105%;
